@@ -1,0 +1,2 @@
+set_io clk 1
+set_io reset 2

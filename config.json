@@ -1,0 +1,56 @@
+{
+  "system_config": {
+    "model_name": "JAIDE-V27-Ultimate-IONQ-IBM-12B",
+    "log_level": "INFO",
+    "library_path": "./build/libjaide_v27_ultimate.so",
+    "fpga_bitstream": "./build/neuromorphic.bin"
+  },
+  "native_config": {
+    "context_length": 16000000,
+    "max_memory_gb": 512,
+    "hds_dim": 9216,
+    "tgn_node_features": 2048,
+    "tgn_memory_dim": 2048,
+    "tgn_time_dim": 128,
+    "chapel_nodes": 64,
+    "nim_scheduler_threads": 128,
+    "enable_formal_verification": true,
+    "enable_ncp": true,
+    "enable_pcp": true,
+    "hce_model_path": "models/hce_v2.model",
+    "tgn_weights_path": "models/tgn_v27_weights.bin",
+    "quantum_shots": 8050,
+    "spectral_target": 0.99
+  },
+  "optimizer_config": {
+    "lr": 0.00014625,
+    "betas": [0.9, 0.99],
+    "eps": 1e-9,
+    "weight_decay": 0.08,
+    "heuristic_momentum_window": 16,
+    "state_matrix_spectral_radius_target": 0.99,
+    "state_matrix_regularization_strength": 0.015,
+    "fisher_approximation": true,
+    "structured_updates": true,
+    "clip_grad_norm": 1.0
+  },
+  "quantum_config": {
+    "shots": 8050,
+    "backend": "ibm_kyoto",
+    "crn": "crn:v1:bluemix:public:quantum-computing:us-east:a/53df1f18b90744e0ab46600c83a649a5:0621f537-f91c-46b4-9651-0619ae67a1e7::",
+    "transpile_optimization_level": 3,
+    "dynamical_decoupling": true,
+    "num_qubits": 22,
+    "use_ionq": false,
+    "ionq_token": "${IONQ_TOKEN}",
+    "ibm_token": "${IBM_TOKEN}",
+    "error_mitigation": true
+  },
+  "training_config": {
+    "batch_size": 64,
+    "epochs": 100,
+    "dataset_path": "training_dataset_full.json",
+    "use_ray": true,
+    "num_workers": 64
+  }
+}

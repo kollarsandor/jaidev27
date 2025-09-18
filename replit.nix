@@ -1,0 +1,40 @@
+{ pkgs }: {
+  deps = [
+    pkgs.zig_0_12
+    pkgs.futhark
+    pkgs.yosys
+    pkgs.icestorm
+    pkgs.nextpnr
+    pkgs.lean4
+    pkgs.isabelle
+    pkgs.agda
+    pkgs.dedukti
+    pkgs.clash
+    pkgs.python3
+    pkgs.python3Packages.torch
+    pkgs.python3Packages.numpy
+    pkgs.python3Packages.scikit-learn
+    pkgs.python3Packages.qiskit
+    pkgs.python3Packages.qiskit-ibm-runtime
+    pkgs.python3Packages.qiskit-ibm-provider
+    pkgs.python3Packages.ionq
+    pkgs.python3Packages.torch-geometric
+    pkgs.python3Packages.networkx
+    pkgs.python3Packages.ray
+    pkgs.chapel
+    pkgs.nim2
+    pkgs.graphviz
+    pkgs.streamlit
+    pkgs.haskellPackages.lens
+    pkgs.julia
+    pkgs.halide
+    pkgs.terra
+    pkgs.elixir
+    pkgs.pony
+    pkgs.unison
+    pkgs.racket
+    pkgs.factor
+    pkgs.scala
+    pkgs.openjdk
+  ];
+}
